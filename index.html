@@ -15,78 +15,109 @@
         }
 
         body {
-            background-color: plum;
             font-family: 'Kanit';
-            font-size: 14px;
         }
 
-        #register {
-            font-size: 3em;
+        .container {
+            width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: azure;
+            padding: 20px;
+        }
 
+        .header {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 20px;
         }
 
         .header-form {
-            font-weight: 800;
+            width: 100px;   
         }
 
-        .gender {
+        .flex {
             display: flex;
-            flex-direction: row-reverse;
+            
+        }
+        .form-input {
+            margin-bottom: 3px;
         }
 
-        .box {
-            height: 20px;
-            width: 50vw;
-            background-color: aqua;
+        input.form, textarea {
+            border: 1px solid black;
+            width: 100%;
         }
-       
+
+        .center {
+            text-align: center;
+        }
+
+        .bunton {
+            border: 1px solid black;
+            width: 100%;
+            height: 40px;
+            background-color: lightcoral;
+            color: white;
+        }
+
     </style>
 
 </head>
 <body>
     <!--form-->
+    <div class="container">
+        <div class="header">
+            Register Form
+        </div>
 
-    <div class="box">
+        <div class="flex form-input">
+            <div class="header-form">ชื่อ</div>
+            <input class="form" type="text">
+        </div>
+        
+        <div class="flex form-input">
+            <div class="header-form">นามสกุล</div>
+            <input class="form" type="text"> 
+        </div>
 
+        <div class="flex form-input">
+            <div class="header-form">อายุ</div>
+                <input class="form" type="number" min="0" max="100">
+        </div>
+                
+        <div class="flex gender form-input">
+            <div class="header-form">เพศ</div>
+                <div>
+                    <input name="gender" type="radio"> ชาย
+                    <input name="gender" type="radio"> หญิง
+                    <input name="gender" type="radio"> ไม่ระบุ
+                </div>
+        </div>
+
+        <div class="form-input">
+            งานอดิเรก
+            <div>
+                <input name="interest" type="checkbox"> อ่านหนังสือ
+            </div>
+            <div>
+                <input name="interest" type="checkbox"> ดูหนัง
+            </div>
+            <div>
+                <input name="interest" type="checkbox"> ฟังเพลง
+            </div>
+        </div>
+
+        <div class="form-input">
+            คำอธิบาย
+            <textarea></textarea>
+        </div>
+        <div class="center">
+            <button class="bunton">ส่งข้อมูล</button>
+        </div>
 
     </div>
-
-    <div id="register">Register Form</div>
-    <span class="header-form">ชื่อ</span>
-    <input class="header-form" type="text">
-    <span class="header-form">นามสกุล</span>
-    <input class="form" type="text"> <br>
-    อายุ <input class="form" type="number" min="0" max="100">
-    <div class="gender">
-        เพศ
-        <div>
-            <input name="gender" type="radio"> ชาย
-        </div>
-        <div>
-            <input name="gender" type="radio"> หญิง
-        </div>
-        <div>
-            <input name="gender" type="radio"> ไม่ระบุ
-        </div>
-    </div>
-    <div>
-        งานอดิเรก
-        <div>
-            <input name="hobby" type="checkbox"> อ่านหนังสือ
-        </div>
-        <div>
-            <input name="hobby" type="checkbox"> ดูหนัง
-        </div>
-        <div>
-            <input name="hobby" type="checkbox"> ฟังเพลง
-        </div>
-    </div>
-    <div>
-        คำอธิบาย
-        <textarea></textarea>
-    </div>
-    <button>ส่งข้อมูล</button>
-
+    
 </body>
 
 </html>
