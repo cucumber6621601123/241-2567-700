@@ -244,7 +244,9 @@ function calculateGrade(score) {
 }
 let student1 = calculateGrade(score1); //เรียกใช้ function โดยใส่ค่า score1
 let student2 = calculateGrade(score2); //เรียกใช้ function โดยใส่ค่า score2
-console.log('grads',student1,student2); //แสดงค่าที่ได้จากการเข้าเงื่อนไข
+console.log('grads',score1,student1); 
+console.log('grads',score2,student2); 
+//แสดงค่าที่ได้จากการเข้าเงื่อนไข
 */
 
 let students = [
