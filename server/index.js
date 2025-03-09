@@ -32,6 +32,13 @@ app.post('/users', async (req, res) => {
    
     try{
         let user = req.body;
+        const errors = validateData(user)
+        if (errors.length > 0) {
+            throw {
+                message: 'กรุณากรอกข้อมูลให้ครบถ้วน',
+                errors: errors
+            }
+        }
         const results = await conn.query('INSERT INTO users SET ?', user)
         res.json({
             message: 'Create user successfully',
@@ -39,14 +46,36 @@ app.post('/users', async (req, res) => {
         })
 
     }catch(error){
-        console.error('error: ', error.message)
+        const errorMessage = error.message || 'something went wrong'
+        const errors = error.errors || []
+        console.error('error message: ', error.message)
         res.status(500).json({
-            message: 'something went wrong',
-            errorMessage: error.message
+            message: error.message,
+            errors: errors
         })
     }
 })
  
+const validateData = (userData) => {
+    let errors = [];
+    if (!userData.firstName) {
+        errors.push('กรุณากรอกชื่อ');
+    }
+    if (!userData.lastName) {
+        errors.push('กรุณากรอกนามสกุล');
+    }
+    if (!userData.age) {
+        errors.push('กรุณากรอกอายุ');
+    }
+    if (!userData.gender) {
+        errors.push('กรุณาเลือกเพศ');
+    }
+    if (!userData.interests) {
+        errors.push('กรุณาเลือกงานอดิเรก');
+    }
+    return errors;
+};
+
 // path = GET /users/:id สำหรับดึง users รายคนออกมา
 app.get('/users/:id', async (req, res) => {
     try {

@@ -55,6 +55,25 @@
             color: white;
    
         }
+
+        .message {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: lightseagreen;
+            display: none;
+
+        }
+
+        .message.sussess {
+            background-color : lightgreen;
+            display: block;
+
+        }
+
+        .message.danger {
+            background-color : lightcoral;
+            display: block;
+        }
         
         @media screen and (max-width: 768px) {
             .flex {
