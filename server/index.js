@@ -39,6 +39,7 @@ app.post('/users', async (req, res) => {
                 errors: errors
             }
         }
+
         const results = await conn.query('INSERT INTO users SET ?', user)
         res.json({
             message: 'Create user successfully',

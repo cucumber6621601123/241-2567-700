@@ -19,13 +19,13 @@ window.onload = async () => {
             const user = response.data;
             
             //2. นำข้อมูล user ที่ดึงมา ใส่ใน input ที่มี
-            let firstNameDOM = document.querySelector("input[name=firstname]")
-            let lastNameDOM = document.querySelector("input[name=lastname]")
+            let firstNameDOM = document.querySelector("input[name=firstName]")
+            let lastNameDOM = document.querySelector("input[name=lastName]")
             let ageDOM = document.querySelector("input[name=age]")
             let descriptionDOM = document.querySelector("textarea[name='description']")
 
-            firstNameDOM.value = user.firstname
-            lastNameDOM.value = user.lastname
+            firstNameDOM.value = user.firstName
+            lastNameDOM.value = user.lastName
             ageDOM.value = user.age
             descriptionDOM.value = user.description
 
@@ -73,8 +73,8 @@ const validateData = (userData) => {
 };
 
 const submitData = async () => {
-    let firstNameDOM = document.querySelector("input[name=firstname]");
-    let lastNameDOM = document.querySelector("input[name=lastname]");
+    let firstNameDOM = document.querySelector("input[name=firstName]");
+    let lastNameDOM = document.querySelector("input[name=lastName]");
     let ageDOM = document.querySelector("input[name=age]");
     let genderDOM = document.querySelector("input[name=gender]:checked") || {}
     let interestDOMs = document.querySelectorAll("input[name=interest]:checked") || {}
@@ -129,10 +129,15 @@ const submitData = async () => {
         messageDOM.innerText = message
         messageDOM.className = "message sussess"
 
-        const response = await axios.put(`${BASE_URL}/users`, userData)
-        console.log('response', response.data);
-        messageDOM.innerText = "บันทึกข้อมูลเรียบร้อย"
-        messageDOM.className = "message sussess"
+        // if (mode === 'CREATE') {
+        //     const response = await axios.post(`${BASE_URL}/users`, userData);
+        //     console.log('response', response.data);
+        // } else {
+        //     const response = await axios.put(`${BASE_URL}/users/${selectedID}`, userData);
+        //     message = 'แก้ไขข้อมูลเรียบร้อย';
+        //     console.log('response', response.data);
+        // }
+        
     } catch (error) {
         console.log('error message', error.message);
         console.log('error', error.errors);
@@ -144,14 +149,14 @@ const submitData = async () => {
         }
 
        
-        let htmlData = '<div>'; 
+        let htmlData = '<div>';  
         htmlData += '<div>' + error.message + '</div>';
         htmlData += '<ul>';
         
         for (let i = 0; i < error.errors.length; i++) {
             htmlData += '<li>' + error.errors[i] + '</li>';
         }
-        htmlData += '</ul>';
+        htmlData += '</ul>'; 
         htmlData += '</div>';
 
         messageDOM.innerHTML = htmlData;
