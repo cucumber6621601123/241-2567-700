@@ -1,0 +1,111 @@
+@font-face {
+    font-family: 'Kanit';
+    src: url('./Kanit/Kanit-Regular.ttf');
+}
+body {
+    font-family: 'Kanit';
+}
+
+/* รีเซ็ตค่า margin และ padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+.header {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+.navbar {
+    background-color:#4195cc; /* สีพื้นหลัง */
+    padding: 10px 0;
+    position: fixed; /* ทำให้ navbar ติดอยู่ด้านบน */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* ทำให้ navbar อยู่ด้านหน้า */
+}
+
+/* สไตล์ของ ul และ li */
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: right;
+}
+
+/* สไตล์ของลิงก์ */
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding: 10px 15px;
+    transition: 0.3s;
+}
+
+/* เอฟเฟกต์ Hover */
+.navbar ul li a:hover {
+    background-color: #4195;
+}
+
+/* Active (หน้าปัจจุบัน) */
+
+.navbar ul li a.active
+{
+    background-color:#295ca5
+}
+.navbar ul li a.active:hover {
+    background-color: #54627F;
+
+}
+
+/* กำหนดขนาดของ container */
+.table-container {
+    width: 90%;
+    margin-bottom: 80px auto 50px; /* ดันตารางลงมาไม่ให้ติดขอบ */
+    
+    overflow-y: auto;
+    max-height: 400px; /* กำหนดความสูงของตารางให้เลื่อนได้ */
+    border: 1px solid #ddd;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ทำให้ Table Head ติดอยู่ด้านบน */
+table {
+    margin-bottom: 80px auto 50px;
+    width: 100%;
+    border-collapse: collapse;
+    position: relative;
+    border: 2px solid #000000
+    
+}
+
+thead {
+    position: sticky;
+    top: 0;
+    background-color:#4195cc;
+
+    color: white;
+    z-index: 100;
+}
+th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+
+tbody tr:nth-child(even) {
+    
+    background-color: #b5d7ea; /* สีเทาอ่อน */
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #f2f2f2; /* สีขาว */
+}

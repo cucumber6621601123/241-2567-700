@@ -1,0 +1,73 @@
+@font-face {
+    font-family: 'Kanit';
+    src: url('./Kanit/Kanit-Regular.ttf');
+}
+
+body {
+    font-family: 'Kanit';
+}
+
+.container {
+    width: 100%;
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #eafdfe;
+    padding: 20px;
+    box-sizing: border-box;
+
+}
+
+.header {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.center_user {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    text-decoration: none;
+    color: #faf9f3;
+    border: 2px solid #4195cc; /* เพิ่มเส้นขอบ */
+    border-radius: 5px; /* มุมโค้ง */
+    background-color:  #4195cc;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color:#faf9f3;
+    color: #0056b3;
+    border-color: #4195cc;
+}
+
+.center_indec {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.btn1 {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    text-decoration: none;
+    color: #faf9f3;
+    border: 2px solid #4195cc; /* เพิ่มเส้นขอบ */
+    border-radius: 5px; /* มุมโค้ง */
+    background-color:  #4195cc;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.btn1:hover {
+    background-color:#faf9f3;
+    color: #0056b3;
+    border-color: #4195cc;
+}
