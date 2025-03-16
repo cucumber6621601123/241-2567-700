@@ -10,14 +10,18 @@ body {
 }
 
 .container {
-    width: 100%;
-    max-width: 640px;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: #eafdfe;
-    padding: 20px;
-    box-sizing: border-box;
-
+    background-color: #d6fefc;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    position: relative;
+    overflow: hidden;
+    width: 768px;
+    max-width: 100%;
+    min-height: 480px;
+    padding: 30px;
+    margin: 50px auto;
+    justify-content: center;
+    /* align-items: center; ให้เนื้อหาทั้งหมดอยู่กลาง */
 }
 
 .header {
@@ -77,6 +81,7 @@ textarea {
 
 
 .btn,.btn1 {
+
     display: inline-block;
     padding: 10px 20px;
     margin: 5px;
@@ -129,5 +134,19 @@ textarea {
     .bunton {
         width: 100%;
     }
+    .container {
+        background-color: #d6fefc;
+        border-radius: 30px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+        position: relative;
+        overflow: hidden;
+        width: 768px;
+        max-width: 100%;
+        min-height: 480px;
+        padding: 30px;
+        margin: 50px auto;
+        justify-content: center;
+    }
+    
 
 }

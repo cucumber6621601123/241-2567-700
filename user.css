@@ -5,42 +5,52 @@
 body {
     font-family: 'Kanit';
 }
-
-/* รีเซ็ตค่า margin และ padding */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-
-
 .header {
     font-size: 36px;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+}
+/* รีเซ็ตค่า margin และ padding */
+/* .container */
+.container {
+    background-color: #fff;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    position: relative;
+    overflow: hidden;
+    width: 768px;
+    max-width: 100%;
+    min-height: 480px;
+    padding: 30px;
+    margin: 50px auto;
+    justify-content: center;
+    /* align-items: center; ให้เนื้อหาทั้งหมดอยู่กลาง */
 }
 
-
-.navbar {
-    background-color:#4195cc; /* สีพื้นหลัง */
+/* Navbar styling */
+.navbar { 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    background-color: #4195cc; /* สีพื้นหลัง */
     padding: 10px 0;
     position: fixed; /* ทำให้ navbar ติดอยู่ด้านบน */
     bottom: 0;
-    left: 0;
-    width: 100%;
+    left: 50%; /* Center the navbar horizontally */
+    transform: translateX(-50%); /* Centering trick */
+    width: 768px; /* Match the width of the container */
+    max-width: 100%;
     z-index: 1000; /* ทำให้ navbar อยู่ด้านหน้า */
 }
 
-/* สไตล์ของ ul และ li */
+/* Styling for the ul and li in navbar */
 .navbar ul {
     list-style: none;
     display: flex;
-    justify-content: right;
+    justify-content: flex-end; /* Align navbar items to the right */
+    margin: 0;
+    padding: 0;
 }
 
-/* สไตล์ของลิงก์ */
-
+/* Styling for navbar links */
 .navbar ul li a {
     text-decoration: none;
     color: white;
@@ -49,21 +59,20 @@ body {
     transition: 0.3s;
 }
 
-/* เอฟเฟกต์ Hover */
+/* Hover effect */
 .navbar ul li a:hover {
-    background-color: #4195;
+    background-color: #4195cc;
 }
 
-/* Active (หน้าปัจจุบัน) */
-
-.navbar ul li a.active
-{
-    background-color:#295ca5
+/* Active link */
+.navbar ul li a.active {
+    background-color: #295ca5;
 }
+
 .navbar ul li a.active:hover {
     background-color: #54627F;
-
 }
+
 
 /* กำหนดขนาดของ container */
 .table-container {
